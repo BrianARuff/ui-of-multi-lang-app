@@ -1,0 +1,25 @@
+.result-from-node-and-c {
+  font-weight: bold;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.info {
+    font-style: italic;
+}
+
+.result-from-node-and-c {
+  color: black;
+}
+
+h2, h3 {
+    text-decoration: underline;
+}
+
+.inner-ol {
+    margin-bottom: 20px;    
+}
+
+.profit {
+    color: green;
+}
