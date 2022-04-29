@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proof of Concept - C program result in JS Web App</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Proof of Concept - C program result in JS Web App</h1>
+    <input id="numOne" type="number" placeholder="0" value="0" />
+    <input id="numTwo" type="number" placeholder="0" value="0" />
+    <input id="numThree" type="number" placeholder="0" value="0" />
+
+    <p id="results">0, 0, 0</p>
+
+    <p class="info">
+      Result:
+      <span class="result-from-node-and-c" id="resultFromNodeAndC"></span>
+    </p>
+
+    <ol>
+      <h2>How it works</h2>
+      <li>Collect user data from UI</li>
+      <li>Format user data in JS</li>
+      <li>
+        Send user data to NodeJS Express REST Application via POST request with
+        the 3 numbers in the request body as JSON data.
+      </li>
+      <li>
+        Use Node's <code>exec</code> function to run a prebuilt C application
+        executable that lives on the server.
+      </li>
+      <ol class="inner-ol">
+        <h3>C Program Steps</h3>
+        <li>loop over argument vector in C program</li>
+        <li>
+          add each num to result which starts at 0 every time the program is ran
+        </li>
+        <li>
+          use stdio to print result at the end just before returning 0 in the
+          main function.
+        </li>
+      </ol>
+      <li>
+        Take the result from the C program, and send it back to the UI via the
+        POST request
+      </li>
+      <li>Finally, insert the result in the UI.</li>
+      <li class="profit">Profit</li>
+    </ol>
+
+    <button id="submit">Submit Numbers</button>
+    <script src="index.js"></script>
+  </body>
+</html>
